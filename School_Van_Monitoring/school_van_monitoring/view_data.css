@@ -1,0 +1,37 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2ffb0; /* This remains the same */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Centering table and content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #88c2fc; /* Light gray background for the container */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #d9a9f7; /* Soft off-white for the table */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Alternate row color */
+tr:nth-child(even) {
+    background-color: #987979; /* Keep this for alternating rows */
+}
+
+tr:hover {
+    background-color: #7edbb1; /* Soft green hover effect for rows */
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps Example</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI-rl3UjRviDsfFfNQrJf5XMzkZqZyAbY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 2.905, lng: 101.864},
+                zoom: 15
+            });
+
+            // Add a click listener for the map
+            map.addListener('click', function(event) {
+                placeMarker(event.latLng);
+            });
+        }
+
+        function placeMarker(location) {
+            var latitude = location.lat();
+            var longitude = location.lng();
+
+            // Log latitude and longitude
+            console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+
+            // Send the data to gps_data.php
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "gps_data.php?latitude=" + latitude + "&longitude=" + longitude, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    console.log("Data sent successfully: ", xhr.responseText);
+                    // Optionally, you can display a success message on your page
+                    alert("Location saved: " + latitude + ", " + longitude);
+                } else {
+                    console.error("Error in AJAX request: " + xhr.status);
+                }
+            };
+            xhr.onerror = function () {
+                console.error("Request failed");
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Click on the map to save your location</h1>
+    <div id="map" style="height: 500px; width: 100%;"></div>
+</body>
+</html>

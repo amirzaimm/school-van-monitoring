@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file here -->
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register User</h2>
+        <form action="submit.php" method="post"> <!-- Change action to submit.php -->
+            <label for="name">Name</label>
+            <input type="text" name="name" required>
+
+            <label for="telegram_id">Telegram ID</label>
+            <input type="text" name="telegram_id" required>
+
+            <label for="phone_number">Phone Number</label>
+            <input type="tel" name="phone_number" required>
+
+            <label for="address">Address</label>
+            <input type="text" name="address" required>
+
+            <label for="school_name">School Name</label>
+            <input type="text" name="school_name" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
